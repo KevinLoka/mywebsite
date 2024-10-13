@@ -33,6 +33,16 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+   * Profile Picture Styles */
+        .profile-picture {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
 
         /* Updated Header Styles */
         header {
@@ -114,18 +124,7 @@
         nav ul li a:hover {
             color: var(--secondary-color);
         }
-/* Profile Picture Styles */
-.profile-picture {
-    width: 100%; /* Full width for responsiveness */
-    max-width: 400px; /* Set a maximum width */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Slightly rounded corners for elegance */
-    object-fit: cover; /* Cover the area while maintaining aspect ratio */
-    border: 3px solid transparent; /* Transparent border to blend in */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
-    margin: 1.5rem auto; /* Center with margin */
-    transition: transform 0.3s, border 0.3s; /* Smooth scale and border effect on hover */
-}
+
 
 /* Scale effect on hover */
 .profile-picture:hover {
