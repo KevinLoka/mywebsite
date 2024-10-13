@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kevin Loka - Senior Analyst</title>
-    <!-- Font Awesome for Icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -25,10 +23,9 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            line-height: 1.7;
+            line-height: 1.7; /* Increased line height for better readability */
             color: var(--text-color);
             background-color: var(--background-color);
-            overflow-x: hidden;
         }
 
         .container {
@@ -48,44 +45,37 @@
             align-items: center;
             text-align: center;
             padding: 2rem;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         header h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Added text shadow for readability */
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             margin-bottom: 2rem;
-            max-width: 600px;
-            line-height: 1.6;
         }
 
         /* Floating Contact Header */
         .flowing-header {
-            position: fixed;
+            position: fixed; /* Fixed positioning to keep it at the top */
             top: 0;
             left: 0;
             width: 100%;
             background-color: rgba(26, 115, 232, 0.9);
             color: #fff;
-            padding: 10px 20px;
+            padding: 10px 0;
             z-index: 1000;
-            transition: transform 0.3s ease-in-out, background-color 0.3s ease;
-        }
-
-        .flowing-header.scrolled {
-            background-color: rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s ease-in-out;
         }
 
         .flowing-header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 20px;
         }
 
         .flowing-header a {
@@ -93,65 +83,70 @@
             text-decoration: none;
             margin-left: 20px;
             font-weight: bold;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
-
-        .flowing-header a:hover {
-            color: #ffdd57;
         }
 
         /* Navigation Styles */
         nav {
             background-color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 100;
-            padding: 10px 0;
         }
 
         nav ul {
             display: flex;
             justify-content: center;
             list-style-type: none;
-            margin: 0;
-            padding: 0;
         }
 
         nav ul li {
-            padding: 0.8rem 1.5rem;
+            padding: 1rem;
         }
 
         nav ul li a {
             color: var(--primary-color);
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
             transition: color 0.3s ease;
         }
 
         nav ul li a:hover {
             color: var(--secondary-color);
         }
+/* Profile Picture Styles */
+.profile-picture {
+    width: 100%; /* Full width for responsiveness */
+    max-width: 400px; /* Set a maximum width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Slightly rounded corners for elegance */
+    object-fit: cover; /* Cover the area while maintaining aspect ratio */
+    border: 3px solid transparent; /* Transparent border to blend in */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+    margin: 1.5rem auto; /* Center with margin */
+    transition: transform 0.3s, border 0.3s; /* Smooth scale and border effect on hover */
+}
 
-        /* Profile Picture */
-        .profile-picture {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            border-radius: 10px;
-            object-fit: cover;
-            border: 3px solid transparent;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            margin: 1.5rem auto;
-            transition: transform 0.3s, border 0.3s;
-        }
+/* Scale effect on hover */
+.profile-picture:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    border: 3px solid #007bff; /* Change border color on hover for a pop of color */
+}
 
-        .profile-picture:hover {
-            transform: scale(1.05);
-            border: 3px solid #007bff;
-        }
+/* Additional Styles for Different Screen Sizes */
+@media (min-width: 768px) { /* Tablet and larger screens */
+    .profile-picture {
+        max-width: 500px; /* Increase size for larger screens */
+    }
+}
+
+@media (min-width: 1200px) { /* Desktop screens */
+    .profile-picture {
+        max-width: 600px; /* Further increase size for desktops */
+    }
+}
+
+
 
         /* Section Styles */
         section {
@@ -168,10 +163,10 @@
         section p {
             font-size: 1.1rem;
             margin: 0 auto 2rem;
-            max-width: 800px;
+            max-width: 800px; /* Added max width for better readability */
         }
 
-               /* Experience Styles */
+        /* Experience Styles */
         .experience-item {
             background-color: #fff;
             border-radius: 8px;
@@ -198,22 +193,21 @@
 
         .experience-item ul {
             list-style-type: none;
-            padding-left: 1.5rem;
         }
 
         .experience-item ul li {
             margin-bottom: 0.5rem;
-            position: relative;
+            display: flex;
+            align-items: flex-start;
         }
 
-        .experience-item ul li::before {
-            content: '\2022';
+        .experience-item ul li i {
             color: var(--secondary-color);
-            font-weight: bold;
-            position: absolute;
-            left: -1rem;
+            margin-right: 0.5rem;
+            margin-top: 0.25rem;
         }
-        /* Skills Section */
+
+        /* Skills Styles */
         .skills-container {
             display: flex;
             flex-wrap: wrap;
@@ -261,73 +255,11 @@
         footer a {
             color: #fff;
             text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
+            font-weight: bold; /* Added bold to footer links */
         }
 
         footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Fancy Sidebar Design */
-        .side-design {
-            position: fixed;
-            top: 50%;
-            left: -100px; /* Adjusted for better visibility */
-            transform: translateY(-50%);
-            background: var(--secondary-color);
-            width: 80px;
-            height: 400px;
-            border-radius: 0 40px 40px 0;
-            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
-            z-index: 500;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transition: left 0.3s ease;
-        }
-
-        .side-design:hover {
-            left: 0; /* Slide out on hover */
-        }
-
-        .side-design:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 5px;
-            background: linear-gradient(to bottom, #fff, #f8f9fa);
-            border-radius: 0 5px 5px 0;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
-
-            header p {
-                font-size: 1rem;
-            }
-
-            .flowing-header {
-                padding: 5px 15px;
-            }
-
-            nav ul li {
-                padding: 0.5rem 1rem;
-            }
-
-            nav ul li a {
-                font-size: 1rem;
-            }
-
-            .side-design {
-                display: none; /* Hide sidebar on smaller screens */
-            }
+            text-decoration: underline; /* Added underline on hover for emphasis */
         }
 
         /* Animations */
@@ -339,41 +271,69 @@
         .fade-in {
             animation: fadeIn 1s ease-in;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            .flowing-header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .flowing-header a {
+                margin-left: 0;
+                margin-top: 5px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Floating Contact Header -->
     <div class="flowing-header">
         <div class="container">
             <span>Kevin Loka</span>
             <div>
                 <a href="mailto:kevinl7696@gmail.com"><i class="fas fa-envelope"></i> kevinl7696@gmail.com</a>
                 <a href="tel:+4917628503088"><i class="fas fa-phone"></i> +4917628503088</a>
-                <a href="https://www.linkedin.com/in/kevinloka/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://www.linkedin.com/in/kevinloka/" target="_blank" style="font-weight: bold; text-decoration: underline;"><i class="fab fa-linkedin"></i> LinkedIn</a>
                 <a href="#"><i class="fas fa-map-marker-alt"></i> Berlin, Germany</a>
             </div>
         </div>
     </div>
 
-    <!-- Header Section -->
     <header class="fade-in">
-        <img src="mine.jpg" alt="Profile Picture" class="profile-picture">
+        <img src="mine.jpg" alt="Profile Picture" class="profile-picture"> <!-- Profile Picture -->
         <h1>Kevin Loka</h1>
         <p>Senior Analyst | Data Analytics & Business Insights</p>
     </header>
 
-    <!-- Main Content -->
+<!--    <nav>-->
+<!--        <ul>-->
+<!--            <li><a href="#summary">Summary</a></li>-->
+<!--            <li><a href="#experience">Experience</a></li>-->
+<!--            <li><a href="#skills">Skills</a></li>-->
+<!--            <li><a href="#education">Education</a></li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+
     <main class="container">
-        <!-- Summary Section -->
         <section id="summary" class="fade-in">
             <h2>Summary</h2>
-            <p>Experienced Senior Analyst with competence in data analytics, project management, and strategic decision-making. Skilled in using data-driven insights for business growth, marketing strategy refinement, and performance improvement. Proven ability to manage end-to-end data projects and collaborate across teams in various industries such as travel, e-commerce, and fintech.</p>
+            <p>Experienced Senior Analyst with competence in data analytics, project management, and strategic decision-making. Skilled in using data-driven insights for business growth, marketing strategy refinement, and performance improvement. Proven ability on managing end-to-end data projects and cross-team collaboration. Industry experience spans across travel industry (revenue management, demand analysis), e-commerce (customer segmentation, marketing analytics, growth), and fintech (risk management, consumer analytics, data management, predictive analytics). Specialized in customer segmentation, marketing analytics, strategic insights, and business analytics.</p>
         </section>
 
-        <!-- Experience Section -->
         <section id="experience" class="fade-in">
             <h2>Experience</h2>
-
             <div class="experience-item">
                 <h3>Senior Analyst - Numa Group GmbH</h3>
                 <p>May 2022 - Present | Berlin, Germany</p>
@@ -389,7 +349,6 @@
                     <li><i class="fas fa-check-circle"></i> Trained and guided team members to improve their analytical skills.</li>
                 </ul>
             </div>
-
             <div class="experience-item">
                 <h3>Senior Data Analyst - TrifidNetworks</h3>
                 <p>July 2019 - May 2022 | Tirana, Albania</p>
@@ -401,7 +360,6 @@
                     <li><i class="fas fa-check-circle"></i> Led data governance policies to ensure data integrity and reliability.</li>
                 </ul>
             </div>
-
             <div class="experience-item">
                 <h3>Junior Data Analyst - TrifidNetworks</h3>
                 <p>June 2017 - July 2019 | Tirana, Albania</p>
@@ -413,7 +371,6 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="fade-in">
             <h2>Skills</h2>
             <div class="skills-container">
@@ -438,13 +395,12 @@
                 <span class="skill-item">Statistics</span>
                 <span class="skill-item">Data Mining</span>
                 <span class="skill-item">Data Visualization</span>
-                <span class="skill-item">Data Governance</span>
+                <span class="skill-item">Data governance</span>
                 <span class="skill-item">Mixpanel</span>
                 <span class="skill-item">Streamlit</span>
             </div>
         </section>
 
-        <!-- Education Section -->
         <section id="education" class="fade-in">
             <h2>Education and Training</h2>
             <div class="education-item">
@@ -461,24 +417,26 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Kevin Loka. All Rights Reserved. | <a href="mailto:kevinl7696@gmail.com">Contact</a></p>
+        <p>&copy; 2024 Kevin Loka. Connect on <a href="https://www.linkedin.com/in/kevinloka/" target="_blank" style="font-weight: bold; text-decoration: underline;">LinkedIn</a>.</p>
     </footer>
 
-    <!-- Fancy Sidebar Design -->
-    <div class="side-design"></div>
-
     <script>
-        // Adding scroll effect for header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.flowing-header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
+        // JavaScript for the flowing header
+        let flowingHeader = document.querySelector('.flowing-header');
+        let lastScrollTop = 0;
+
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                flowingHeader.classList.add('hidden');
             } else {
-                header.classList.remove('scrolled');
+                flowingHeader.classList.remove('hidden');
             }
+            lastScrollTop = scrollTop;
         });
     </script>
 </body>
+
+
 </html>
