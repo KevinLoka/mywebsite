@@ -166,6 +166,7 @@
             max-width: 800px; /* Added max width for better readability */
         }
 
+
         /* Experience Styles */
         .experience-item {
             background-color: #fff;
@@ -193,20 +194,21 @@
 
         .experience-item ul {
             list-style-type: none;
+            padding-left: 1.5rem;
         }
 
         .experience-item ul li {
             margin-bottom: 0.5rem;
-            display: flex;
-            align-items: flex-start;
+            position: relative;
         }
 
-        .experience-item ul li i {
+        .experience-item ul li::before {
+            content: '\2022';
             color: var(--secondary-color);
-            margin-right: 0.5rem;
-            margin-top: 0.25rem;
+            font-weight: bold;
+            position: absolute;
+            left: -1rem;
         }
-
         /* Skills Styles */
         .skills-container {
             display: flex;
