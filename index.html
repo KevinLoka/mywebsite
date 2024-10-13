@@ -12,6 +12,7 @@
             --secondary-color: #34a853;
             --text-color: #333;
             --background-color: #f8f9fa;
+            --header-bg: url('https://source.unsplash.com/random/1920x1080?data');
         }
 
         * {
@@ -22,7 +23,7 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
+            line-height: 1.7; /* Increased line height for better readability */
             color: var(--text-color);
             background-color: var(--background-color);
         }
@@ -35,7 +36,7 @@
 
         /* Header Styles */
         header {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1920x1080?data') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), var(--header-bg) no-repeat center center/cover;
             height: 100vh;
             color: #fff;
             display: flex;
@@ -49,6 +50,7 @@
         header h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Added text shadow for readability */
         }
 
         header p {
@@ -56,9 +58,9 @@
             margin-bottom: 2rem;
         }
 
-        /* Flowing Contact Header */
+        /* Floating Contact Header */
         .flowing-header {
-            position: fixed;
+            position: fixed; /* Fixed positioning to keep it at the top */
             top: 0;
             left: 0;
             width: 100%;
@@ -67,10 +69,6 @@
             padding: 10px 0;
             z-index: 1000;
             transition: transform 0.3s ease-in-out;
-        }
-
-        .flowing-header.hidden {
-            transform: translateY(-100%);
         }
 
         .flowing-header .container {
@@ -84,6 +82,7 @@
             color: #fff;
             text-decoration: none;
             margin-left: 20px;
+            font-weight: bold;
         }
 
         /* Navigation Styles */
@@ -115,6 +114,39 @@
         nav ul li a:hover {
             color: var(--secondary-color);
         }
+/* Profile Picture Styles */
+.profile-picture {
+    width: 100%; /* Full width for responsiveness */
+    max-width: 400px; /* Set a maximum width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Slightly rounded corners for elegance */
+    object-fit: cover; /* Cover the area while maintaining aspect ratio */
+    border: 3px solid transparent; /* Transparent border to blend in */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+    margin: 1.5rem auto; /* Center with margin */
+    transition: transform 0.3s, border 0.3s; /* Smooth scale and border effect on hover */
+}
+
+/* Scale effect on hover */
+.profile-picture:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    border: 3px solid #007bff; /* Change border color on hover for a pop of color */
+}
+
+/* Additional Styles for Different Screen Sizes */
+@media (min-width: 768px) { /* Tablet and larger screens */
+    .profile-picture {
+        max-width: 500px; /* Increase size for larger screens */
+    }
+}
+
+@media (min-width: 1200px) { /* Desktop screens */
+    .profile-picture {
+        max-width: 600px; /* Further increase size for desktops */
+    }
+}
+
+
 
         /* Section Styles */
         section {
@@ -126,6 +158,12 @@
             font-size: 2.5rem;
             margin-bottom: 2rem;
             color: var(--primary-color);
+        }
+
+        section p {
+            font-size: 1.1rem;
+            margin: 0 auto 2rem;
+            max-width: 800px; /* Added max width for better readability */
         }
 
         /* Experience Styles */
@@ -217,6 +255,11 @@
         footer a {
             color: #fff;
             text-decoration: none;
+            font-weight: bold; /* Added bold to footer links */
+        }
+
+        footer a:hover {
+            text-decoration: underline; /* Added underline on hover for emphasis */
         }
 
         /* Animations */
@@ -256,19 +299,20 @@
     </style>
 </head>
 <body>
-    <div class="flowing-header hidden">
+    <div class="flowing-header">
         <div class="container">
             <span>Kevin Loka</span>
             <div>
                 <a href="mailto:kevinl7696@gmail.com"><i class="fas fa-envelope"></i> kevinl7696@gmail.com</a>
                 <a href="tel:+4917628503088"><i class="fas fa-phone"></i> +4917628503088</a>
-                <a href="https://www.linkedin.com/in/kevinloka/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://www.linkedin.com/in/kevinloka/" target="_blank" style="font-weight: bold; text-decoration: underline;"><i class="fab fa-linkedin"></i> LinkedIn</a>
                 <a href="#"><i class="fas fa-map-marker-alt"></i> Berlin, Germany</a>
             </div>
         </div>
     </div>
 
     <header class="fade-in">
+        <img src="profile.jpg" alt="Profile Picture" class="profile-picture"> <!-- Profile Picture -->
         <h1>Kevin Loka</h1>
         <p>Senior Analyst | Data Analytics & Business Insights</p>
     </header>
@@ -285,9 +329,7 @@
     <main class="container">
         <section id="summary" class="fade-in">
             <h2>Summary</h2>
-            <p>
-                Experienced Senior Analyst with competence in data analytics, project management, and strategic decision-making. Skilled in using data-driven insights for business growth, marketing strategy refinement, and performance improvement. Proven ability on managing end-to-end data projects and cross-team collaboration. Industry experience spans across travel industry (revenue management, demand analysis), e-commerce (customer segmentation, marketing analytics, growth), and fintech (risk management, consumer analytics, data management, predictive analytics). Specialized in customer segmentation, marketing analytics, strategic insights, and business analytics.
-            </p>
+            <p>Experienced Senior Analyst with competence in data analytics, project management, and strategic decision-making. Skilled in using data-driven insights for business growth, marketing strategy refinement, and performance improvement. Proven ability on managing end-to-end data projects and cross-team collaboration. Industry experience spans across travel industry (revenue management, demand analysis), e-commerce (customer segmentation, marketing analytics, growth), and fintech (risk management, consumer analytics, data management, predictive analytics). Specialized in customer segmentation, marketing analytics, strategic insights, and business analytics.</p>
         </section>
 
         <section id="experience" class="fade-in">
@@ -376,7 +418,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Kevin Loka. Connect on <a href="https://www.linkedin.com/in/kevinloka/" target="_blank">LinkedIn</a>.</p>
+        <p>&copy; 2024 Kevin Loka. Connect on <a href="https://www.linkedin.com/in/kevinloka/" target="_blank" style="font-weight: bold; text-decoration: underline;">LinkedIn</a>.</p>
     </footer>
 
     <script>
@@ -395,4 +437,6 @@
         });
     </script>
 </body>
+
+
 </html>
